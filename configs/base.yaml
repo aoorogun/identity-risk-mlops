@@ -1,0 +1,30 @@
+project: {version: "1.0.0", seed: 42}
+paths:
+  data: data/verification_events.csv
+  artifacts: artifacts
+  reports: reports
+data:
+  start: "2023-01-01"
+  days: 540
+  rows: 30000
+  test_start: "2024-03-01"
+features:
+  categorical: [document_type, country_risk_tier, channel]
+  numeric:
+    - face_match_score
+    - liveness_score
+    - image_quality_score
+    - device_integrity_score
+    - ip_risk_score
+    - requests_24h
+    - retry_count
+    - document_age_days
+    - latency_ms
+  target: verification_failed
+training:
+  candidates: [logistic_regression, random_forest, histogram_gradient_boosting]
+  validation_days: 60
+  costs: {false_approval: 25.0, false_rejection: 5.0, manual_review: 1.0}
+  review_thresholds: [0.12, 0.65]
+monitoring: {psi_warning: 0.10, psi_critical: 0.25}
+

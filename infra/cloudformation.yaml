@@ -1,0 +1,15 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: Secure baseline for identity-risk ML
+Resources:
+  ArtifactBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketEncryption: {ServerSideEncryptionConfiguration: [{ServerSideEncryptionByDefault: {SSEAlgorithm: aws:kms}}]}
+      VersioningConfiguration: {Status: Enabled}
+      PublicAccessBlockConfiguration: {BlockPublicAcls: true, BlockPublicPolicy: true, IgnorePublicAcls: true, RestrictPublicBuckets: true}
+  DriftAlarm:
+    Type: AWS::CloudWatch::Alarm
+    Properties: {Namespace: PremblyRisk, MetricName: MaximumPSI, Statistic: Maximum, Period: 3600, EvaluationPeriods: 1, Threshold: 0.25, ComparisonOperator: GreaterThanOrEqualToThreshold, TreatMissingData: breaching}
+Outputs:
+  ArtifactBucket: {Value: !Ref ArtifactBucket}
+

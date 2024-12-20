@@ -1,0 +1,11 @@
+{
+  "scenario_id": "POLICY-2024-EMERGING-MARKET-LAUNCH",
+  "sample_rows": 5000,
+  "traffic_multiplier": 1.35,
+  "baseline_failure_probability": 0.12758307178377618,
+  "scenario_failure_probability": 0.1831028835226499,
+  "baseline_review_volume": 1922,
+  "scenario_review_volume_scaled": 4502,
+  "baseline_reject_rate": 0.0026,
+  "scenario_reject_rate": 0.024
+}

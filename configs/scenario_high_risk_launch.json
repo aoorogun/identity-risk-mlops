@@ -1,0 +1,12 @@
+{
+  "scenario_id": "POLICY-2024-EMERGING-MARKET-LAUNCH",
+  "name": "Higher-risk traffic launch with stricter review",
+  "traffic_multiplier": 1.35,
+  "feature_shocks": {
+    "ip_risk_score": {"operation": "add", "value": 0.08},
+    "requests_24h": {"operation": "multiply", "value": 1.20},
+    "image_quality_score": {"operation": "add", "value": -0.05}
+  },
+  "policy": {"approve_below": 0.10, "reject_at_or_above": 0.55}
+}
+

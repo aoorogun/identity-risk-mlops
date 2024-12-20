@@ -1,0 +1,92 @@
+{
+  "version": "1.0.0",
+  "selected_model": "logistic_regression",
+  "features": [
+    "document_type",
+    "country_risk_tier",
+    "channel",
+    "face_match_score",
+    "liveness_score",
+    "image_quality_score",
+    "device_integrity_score",
+    "ip_risk_score",
+    "requests_24h",
+    "retry_count",
+    "document_age_days",
+    "latency_ms"
+  ],
+  "numeric_features": [
+    "face_match_score",
+    "liveness_score",
+    "image_quality_score",
+    "device_integrity_score",
+    "ip_risk_score",
+    "requests_24h",
+    "retry_count",
+    "document_age_days",
+    "latency_ms"
+  ],
+  "candidates": {
+    "logistic_regression": {
+      "roc_auc": 0.7701855976243505,
+      "average_precision": 0.3862222411750094,
+      "brier_score": 0.09889591394677161,
+      "max_f1": 0.4341957255343083
+    },
+    "random_forest": {
+      "roc_auc": 0.7548200178935145,
+      "average_precision": 0.36286918433612847,
+      "brier_score": 0.10189026854487129,
+      "max_f1": 0.4169550173010381
+    },
+    "histogram_gradient_boosting": {
+      "roc_auc": 0.7584741019930329,
+      "average_precision": 0.36064452808215286,
+      "brier_score": 0.10130884930990905,
+      "max_f1": 0.41735918744229
+    }
+  },
+  "test_metrics": {
+    "roc_auc": 0.7154652935025575,
+    "average_precision": 0.3516496032037854,
+    "brier_score": 0.12825420956875014,
+    "max_f1": 0.3995067817509248
+  },
+  "policy_thresholds": {
+    "approve_below": 0.12,
+    "reject_at_or_above": 0.65
+  },
+  "policy_cost": 11620.0,
+  "action_rates": {
+    "approve": 0.6061812967978334,
+    "review": 0.391110403058786,
+    "reject": 0.002708300143380596
+  },
+  "group_metrics": {
+    "high": {
+      "roc_auc": 0.7085000568016865,
+      "average_precision": 0.4358123898495073,
+      "brier_score": 0.17014560361619385,
+      "max_f1": 0.4978902953586498,
+      "review_rate": 0.6464864864864864
+    },
+    "low": {
+      "roc_auc": 0.7045449166982204,
+      "average_precision": 0.31062634697622854,
+      "brier_score": 0.11544835545575229,
+      "max_f1": 0.37420526793823794,
+      "review_rate": 0.337173579109063
+    },
+    "medium": {
+      "roc_auc": 0.7114918592917838,
+      "average_precision": 0.34001573868524276,
+      "brier_score": 0.12628801765330655,
+      "max_f1": 0.3869992441421013,
+      "review_rate": 0.3562590975254731
+    }
+  },
+  "train_end": "2024-02-29 23:48:06",
+  "test_start": "2024-03-01",
+  "test_rows": 6277,
+  "data_sha256": "e9387386ed74ef4d9193abe322e1669b8388fb6feb7b6fb0899382278770c754"
+}

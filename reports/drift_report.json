@@ -1,0 +1,15 @@
+{
+  "status": "healthy",
+  "maximum_psi": 0.0027332553794802115,
+  "feature_psi": {
+    "face_match_score": 0.002142351076934848,
+    "liveness_score": 0.0016819901244024705,
+    "image_quality_score": 0.0013510599478571783,
+    "device_integrity_score": 0.0027332553794802115,
+    "ip_risk_score": 0.0016960416319723155,
+    "requests_24h": 0.0004247148766072797,
+    "retry_count": 0.00016123655122834337,
+    "document_age_days": 0.002417242997221729,
+    "latency_ms": 0.0019097359449777597
+  }
+}
